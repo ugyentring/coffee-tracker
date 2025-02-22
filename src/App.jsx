@@ -1,9 +1,28 @@
+import Layout from "./components/Layout";
+import Hero from "./components/Hero";
+import CoffeeForm from "./components/CoffeeForm"
+import Stats from "./components/Stats"
+import History from "./components/History"
 
 const App = () => {
-  return (
+
+  const isAuthenticated = false;
+
+  const authenticatedContent = (
     <>
-      <h2>Hello, Ugyen!</h2>
+      <Stats />
+      <History />
     </>
+  )
+
+  return (
+    <Layout>
+      <Hero />
+      <CoffeeForm />
+      {
+        isAuthenticated && (authenticatedContent)
+      }
+    </Layout>
   )
 }
 
